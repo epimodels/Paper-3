@@ -20,7 +20,7 @@ nruns=1000
 cases = numpy.zeros([nruns, 5])
 
 #con_traj=numpy.empty([end_time,nruns])
-acq_traj=numpy.empty([end_time,nruns])
+acq_traj=numpy.empty([n_samples,nruns])
 # Run is a single run of the model that returns the number of incident cases
 def Baserun(iterations):
     for k in range(0, iterations):
@@ -40,7 +40,7 @@ def Baserun(iterations):
         cases[k,2] = outcomes[28][0][-1]
         cases[k,3] = outcomes[36][0][-1]
         cases[k,4] = outcomes[42][0][-1]
-        for t in range(0,end_time):
+        for t in range(0,n_samples):
             acq_traj[t,k]=outcomes[16][0][t]
            #con_traj[t,k]=outcomes[16][0][t]+outcomes[19][0][t]+outcomes[21][0][t]+outcomes[23][0][t]+outcomes[25][0][t]+outcomes[27][0][t]+outcomes[35][0][t]+outcomes[37][0][t]+outcomes[38][0][t]+outcomes[39][0][t]+outcomes[40][0][t]+outcomes[41][0][t]
     return cases
