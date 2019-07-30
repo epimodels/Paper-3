@@ -1,73 +1,27 @@
-A=readtable('acq_trajAdm12.csv');
-A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
+%State Variables
+NumberOfYears=1;                        %Length of study
+NumberOfSteps=NumberOfYears*365*24*60;  %Number of minutes in a year
+NumberOfSimulations=1000;               %Number of Simulations you want to look through
+MaxNumberOfAcquisitions=6;              %Highest number of acquisitions you want to count
 
-for j=1:6
-    
-   for i=1:1000
-       k=find(A(:,i)>=j,1);
-       if ~isempty(k)
-           if k<=8759
-               F(j,i)=k;
-           else
-               k=k-(i-1)*8759;
-               F(j,i)=k;
-            end
-        else
-           F(j,i)=8760;
-        end
-    end
-    
-end
-
-csvwrite('AcqSurvivalWithAdm12.csv',F);
-save('AcqSurvivalWithAdm12','F');
-
-A=readtable('acq_trajAdm21.csv');
-A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
-
-for j=1:6
-    
-   for i=1:1000
-       k=find(A(:,i)>=j,1);
-       if ~isempty(k)
-           if k<=8759
-               F(j,i)=k;
-           else
-               k=k-(i-1)*8759;
-               F(j,i)=k;
-            end
-        else
-           F(j,i)=8760;
-        end
-    end
-    
-end
-
-csvwrite('AcqSurvivalWithAdm21.csv',F);
-save('AcqSurvivalWithAdm21','F');
-
+%The Code
 A=readtable('acq_trajFullSystem12.csv');
 A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
 
-for j=1:6
+for j=1:MaxNumberOfAcquisitions
     
-   for i=1:1000
+   for i=1:NumberOfSimulations
        k=find(A(:,i)>=j,1);
        if ~isempty(k)
-           if k<=8759
+           if k<=(NumberOfSteps-1)
                F(j,i)=k;
            else
-               k=k-(i-1)*8759;
+               k=k-(i-1)*(NumberOfSteps-1);
                F(j,i)=k;
             end
         else
-           F(j,i)=8760;
+           F(j,i)=NumberOfSteps;
         end
     end
     
@@ -78,22 +32,21 @@ save('AcqSurvivalFullSystem12','F');
 
 A=readtable('acq_trajFullSystem21.csv');
 A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
 
-for j=1:6
+for j=1:MaxNumberOfAcquisitions
     
-   for i=1:1000
+   for i=1:NumberOfSimulations
        k=find(A(:,i)>=j,1);
        if ~isempty(k)
-           if k<=8759
+           if k<=(NumberOfSteps-1)
                F(j,i)=k;
            else
-               k=k-(i-1)*8759;
+               k=k-(i-1)*(NumberOfSteps-1);
                F(j,i)=k;
             end
         else
-           F(j,i)=8760;
+           F(j,i)=NumberOfSteps;
         end
     end
     
@@ -104,22 +57,21 @@ save('AcqSurvivalFullSystem21','F');
 
 A=readtable('acq_trajFullSystemNoInitial.csv');
 A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
 
-for j=1:6
+for j=1:MaxNumberOfAcquisitions
     
-   for i=1:1000
+   for i=1:NumberOfSimulations
        k=find(A(:,i)>=j,1);
        if ~isempty(k)
-           if k<=8759
+           if k<=(NumberOfSteps-1)
                F(j,i)=k;
            else
-               k=k-(i-1)*8759;
+               k=k-(i-1)*(NumberOfSteps-1);
                F(j,i)=k;
             end
         else
-           F(j,i)=8760;
+           F(j,i)=NumberOfSteps;
         end
     end
     
@@ -128,54 +80,102 @@ end
 csvwrite('AcqSurvivalFullSystemNoInitial.csv',F);
 save('AcqSurvivalFullSystemNoInitial','F');
 
-A=readtable('acq_trajWOAdm12.csv');
+A=readtable('acq_trajNoAdm12.csv');
 A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
 
-for j=1:6
+for j=1:MaxNumberOfAcquisitions
     
-   for i=1:1000
+   for i=1:NumberOfSimulations
        k=find(A(:,i)>=j,1);
        if ~isempty(k)
-           if k<=8759
+           if k<=(NumberOfSteps-1)
                F(j,i)=k;
            else
-               k=k-(i-1)*8759;
+               k=k-(i-1)*(NumberOfSteps-1);
                F(j,i)=k;
             end
         else
-           F(j,i)=8760;
+           F(j,i)=NumberOfSteps;
         end
     end
     
 end
 
-csvwrite('AcqSurvivalWOAdm12.csv',F);
-save('AcqSurvivalWOAdm12','F');
+csvwrite('AcqSurvivalNoAdm12.csv',F);
+save('AcqSurvivalNoAdm12','F');
 
-A=readtable('acq_trajWOAdm21.csv');
+A=readtable('acq_trajNoAdm21.csv');
 A=table2array(A);
-%A=transpose(A);
-F=zeros(6,1000);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
 
-for j=1:6
+for j=1:MaxNumberOfAcquisitions
     
-   for i=1:1000
+   for i=1:NumberOfSimulations
        k=find(A(:,i)>=j,1);
        if ~isempty(k)
-           if k<=8759
+           if k<=(NumberOfSteps-1)
                F(j,i)=k;
            else
-               k=k-(i-1)*8759;
+               k=k-(i-1)*(NumberOfSteps-1);
                F(j,i)=k;
             end
         else
-           F(j,i)=8760;
+           F(j,i)=NumberOfSteps;
         end
     end
     
 end
 
-csvwrite('AcqSurvivalWOAdm21.csv',F);
-save('AcqSurvivalWOAdm21','F');
+csvwrite('AcqSurvivalNoAdm21.csv',F);
+save('AcqSurvivalNoAdm21','F');
+
+A=readtable('acq_trajNoColAdm12.csv');
+A=table2array(A);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
+
+for j=1:MaxNumberOfAcquisitions
+    
+   for i=1:NumberOfSimulations
+       k=find(A(:,i)>=j,1);
+       if ~isempty(k)
+           if k<=(NumberOfSteps-1)
+               F(j,i)=k;
+           else
+               k=k-(i-1)*(NumberOfSteps-1);
+               F(j,i)=k;
+            end
+        else
+           F(j,i)=NumberOfSteps;
+        end
+    end
+    
+end
+
+csvwrite('AcqSurvivalNoColAdm12.csv',F);
+save('AcqSurvivalNoColAdm12','F');
+
+A=readtable('acq_trajNoColAdm21.csv');
+A=table2array(A);
+F=zeros(MaxNumberOfAcquisitions,NumberOfSimulations);
+
+for j=1:MaxNumberOfAcquisitions
+    
+   for i=1:NumberOfSimulations
+       k=find(A(:,i)>=j,1);
+       if ~isempty(k)
+           if k<=(NumberOfSteps-1)
+               F(j,i)=k;
+           else
+               k=k-(i-1)*(NumberOfSteps-1);
+               F(j,i)=k;
+            end
+        else
+           F(j,i)=NumberOfSteps;
+        end
+    end
+    
+end
+
+csvwrite('AcqSurvivalNoColAdm21.csv',F);
+save('AcqSurvivalNoColAdm21','F');

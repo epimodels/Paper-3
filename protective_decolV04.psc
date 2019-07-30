@@ -654,14 +654,14 @@ N_c6 = 0
 D_u = 1
 D_c = 0
 
-P_u1 = 3
+P_u1 = 1
 P_u2 = 3
 P_u3 = 3
 P_u4 = 3
 P_u5 = 3
 P_u6 = 3
 
-P_c1 = 0
+P_c1 = 2
 P_c2 = 0
 P_c3 = 0
 P_c4 = 0
@@ -699,8 +699,8 @@ theta = 0.00949 # probability of death/discharge
 #theta=0.0
 
 # Admission Proportions
-nu = 0.0779 # proportion of admissions of colonized with MRSA
-#nu = 0.0
+#nu = 0.0779 # proportion of admissions of colonized with MRSA
+nu = 0.0
 
 # Handwashing and Gown/Glove Change Rates
 iota_N = 6.404 #11.92 nurse direct care tasks per hour with 56.55% compliance and 95% efficacy
