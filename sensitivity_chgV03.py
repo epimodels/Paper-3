@@ -114,4 +114,4 @@ print("Complete")
 
 print("Saving Files")
 numpy.savetxt('basesweep4.csv',base_sweep,delimiter=',',comments=',')
-numpy.savetxt('acq_trajNoColAdm21.csv',acq_traj,delimiter=',')
+numpy.savetxt('acq_trajNoColAdm12.csv',acq_traj,delimiter=',')

@@ -126,7 +126,7 @@ R24:
 
 R25:	
 	P_u1 > P_c1 + Adm
-	theta * P_u1 * nu
+	theta * P_u1 * nu * (1-gamma4)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 2 #
 R26:
@@ -143,7 +143,7 @@ R28:
 
 R29:	
 	P_u2 > P_c2 + Adm
-	theta * P_u2 * nu
+	theta * P_u2 * nu * (1-gamma4)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 3 #
 R30:
@@ -160,7 +160,7 @@ R32:
 
 R33:	
 	P_u3 > P_c3 + Adm
-	theta * P_u3 * nu
+	theta * P_u3 * nu * (1-gamma4)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 4 #
 R34:
@@ -177,7 +177,7 @@ R36:
 
 R37:	
 	P_u4 > P_c4 + Adm
-	theta * P_u4 * nu
+	theta * P_u4 * nu * (1-gamma4)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 5 #
 R38:
@@ -194,7 +194,7 @@ R40:
 
 R41:	
 	P_u5 > P_c5 + Adm
-	theta * P_u5 * nu
+	theta * P_u5 * nu * (1-gamma4)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 6 #
 R42:
@@ -368,54 +368,62 @@ R81:
     P_p6 > P_u6
     epsilon2 * P_p6
     
-## Admission reactions for CHG
-R82:
-    P_p1 > P_u1
-    mu * P_p1
+## Admission for uncolonized from protected
 
-R83:
+R82:
 	P_p1 > P_u1
 	theta * P_p1 * (1-nu)
 	
-R84:
-    P_p2 > P_u2
-    mu * P_p2
 
-R85:
+R35:
 	P_p2 > P_u2
 	theta * P_p2 * (1-nu)
 	
-R86:
-    P_p3 > P_u3
-    mu * P_p3
 
-R87:
+R84:
 	P_p3 > P_u3
 	theta * P_p3 * (1-nu)
 	
-R88:
-    P_p4 > P_u4
-    mu * P_p4
 
-R89:
+R85:
 	P_p4 > P_u4
 	theta * P_p4 * (1-nu)
 	
-R90:
-    P_p5 > P_u5
-    mu * P_p5
 
-R91:
+R86:
 	P_p5 > P_u5
 	theta * P_p5 * (1-nu)
 	
-R92:
-    P_p6 > P_u6
-    mu * P_p6
 
-R93:
+R87:
 	P_p6 > P_u6
 	theta * P_p6 * (1-nu)
+	
+## Admission for coloninized from protected
+
+R88:
+	P_p1 > P_c1 + Adm
+	theta * P_p1 * nu * (1-gamma4)
+	
+R89:
+	P_p2 > P_c2 + Adm
+	theta * P_p2 * nu * (1-gamma4)
+	
+R90:
+	P_p3 > P_c3 + Adm
+	theta * P_p3 * nu * (1-gamma4)
+	
+R91:
+	P_p4 > P_c4 + Adm
+	theta * P_p4 * nu * (1-gamma4)
+	
+R92:
+	P_p5 > P_c5 + Adm
+	theta * P_p5 * nu * (1-gamma4)
+	
+R93:
+	P_p6 > P_c6 + Adm
+	theta * P_p6 * nu * (1-gamma4)
 	
 ## Reactions involving infected individuals ##
 
@@ -494,6 +502,8 @@ R110:
 R111:
     P_i6 > P_c6 + Deaths
     gamma2 * nu * P_i6
+    
+## Cured from Infection
     
 R112:
     P_i1 > P_u1
@@ -654,15 +664,15 @@ N_c6 = 0
 D_u = 1
 D_c = 0
 
-P_u1 = 1
-P_u2 = 3
+P_u1 = 2
+P_u2 = 2
 P_u3 = 3
 P_u4 = 3
 P_u5 = 3
 P_u6 = 3
 
-P_c1 = 2
-P_c2 = 0
+P_c1 = 1
+P_c2 = 1
 P_c3 = 0
 P_c4 = 0
 P_c5 = 0
@@ -692,7 +702,7 @@ Dis=0
 rho_N = 3.973 # nurse direct care tasks per patient per hour
 rho_D = 0.181 # doctor direct care tasks per patient per hour 
 sigma = 0.054 # hand contamination probability
-psi = 0.0527 # successful colonization of an uncolonized patient probability
+psi = 0.046 # successful colonization of an uncolonized patient probability
 
 # Exit (death/discharge) rates
 theta = 0.00949 # probability of death/discharge
@@ -713,10 +723,14 @@ epsilon1 = 0.125  # effectiveness of chg
 epsilon2 = 1.0    # rate protected people are returned to uncolonized
 epsilon3 = 0.0    # rate people are bathed in chg
 
-gamma1 = 0.000343  # rate colonized become infected
-gamma2 = 0.000403    # rate infected die
-gamma3 = 0.002976      # rate infected cured
-gamma4 = 0.32      # % infected from colonized
+#gamma1 = 0.000343  # rate colonized become infected
+gamma1 = 0.0
+#gamma2 = 0.000403    # rate infected die
+gamma2 = 0.0
+#gamma3 = 0.002976      # rate infected cured
+gamma3 = 0.0
+#gamma4 = 0.32      # % infected from colonized
+gamma4 = 0.0
 
 
 
