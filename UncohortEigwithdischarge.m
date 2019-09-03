@@ -20,7 +20,8 @@ F=[[0, rhon*psi*PT/NT , rhod*psi*PT/DT];
 V = [[mu+theta*nuu, 0, 0];
      [-rhon*sigma*NT/PT, iotan, 0];
      [-rhod*sigma*DT/PT, 0, iotad]];
-
-eig(F*V^(-1))
+D=F*(V^(-1));
+eig(D)
+eig(F*(V^(-1)))
 
 A1=psi*sigma*(DT*iotad*rhon^2+iotan*rhod^2)/((theta*nuu+mu)*iotan*DT*iotad)
