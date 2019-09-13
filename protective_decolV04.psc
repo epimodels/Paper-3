@@ -126,7 +126,7 @@ R24:
 
 R25:	
 	P_u1 > P_c1 + Adm
-	theta * P_u1 * nu * (1-gamma4)
+	theta * P_u1 * nu * (1-deltaP)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 2 #
 R26:
@@ -143,7 +143,7 @@ R28:
 
 R29:	
 	P_u2 > P_c2 + Adm
-	theta * P_u2 * nu * (1-gamma4)
+	theta * P_u2 * nu * (1-deltaP)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 3 #
 R30:
@@ -160,7 +160,7 @@ R32:
 
 R33:	
 	P_u3 > P_c3 + Adm
-	theta * P_u3 * nu * (1-gamma4)
+	theta * P_u3 * nu * (1-deltaP)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 4 #
 R34:
@@ -177,7 +177,7 @@ R36:
 
 R37:	
 	P_u4 > P_c4 + Adm
-	theta * P_u4 * nu * (1-gamma4)
+	theta * P_u4 * nu * (1-deltaP)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 5 #
 R38:
@@ -194,7 +194,7 @@ R40:
 
 R41:	
 	P_u5 > P_c5 + Adm
-	theta * P_u5 * nu * (1-gamma4)
+	theta * P_u5 * nu * (1-deltaP)
 
 # Reactions Involving Uncontaminated Patients (P_u) Cohort 6 #
 R42:
@@ -222,7 +222,7 @@ R46:
     
 R47:
 	P_c1 > P_c1 + Dis + Adm
-	theta * P_c1 * nu * (1-gamma4)
+	theta * P_c1 * nu * (1-deltaP)
 
 R48:
 	P_c1 > P_u1 + Dis
@@ -236,7 +236,7 @@ R49:
 
 R50:
 	P_c2 > P_c2 + Dis + Adm
-	theta * P_c2 * nu * (1-gamma4)
+	theta * P_c2 * nu * (1-deltaP)
 
 R51:
 	P_c2 > P_u2 + Dis
@@ -249,7 +249,7 @@ R52:
     
 R53:
 	P_c3 > P_c3 + Dis + Adm
-	theta * P_c3 * nu * (1-gamma4)
+	theta * P_c3 * nu * (1-deltaP)
 
 R54:
 	P_c3 > P_u3 + Dis
@@ -262,7 +262,7 @@ R55:
     
 R56:
 	P_c4 > P_c4 + Dis + Adm
-	theta * P_c4 * nu * (1-gamma4)
+	theta * P_c4 * nu * (1-deltaP)
 
 R57:
 	P_c4 > P_u4 + Dis
@@ -275,7 +275,7 @@ R58:
     
 R59:
 	P_c5 > P_c5 + Dis + Adm
-	theta * P_c5 * nu * (1-gamma4)
+	theta * P_c5 * nu * (1-deltaP)
 
 R60:
 	P_c5 > P_u5 + Dis
@@ -288,7 +288,7 @@ R61:
     
 R62:
 	P_c6 > P_c6 + Dis + Adm
-	theta * P_c6 * nu * (1-gamma4)
+	theta * P_c6 * nu * (1-deltaP)
 
 R63:
 	P_c6 > P_u6 + Dis
@@ -298,75 +298,75 @@ R63:
 	
 R64:
     P_c1 > P_p1
-    epsilon1 * epsilon3 * P_c1
+    epsilonE * epsilonB * P_c1
     
 R65:
     P_u1 > P_p1
-    epsilon1 * epsilon3 * P_u1
+    epsilonE * epsilonB * P_u1
     
 R66:
     P_p1 > P_u1
-    epsilon2 * P_p1
+    epsilonU * P_p1
     
 R67:
     P_c2 > P_p2
-    epsilon1 * epsilon3 * P_c2
+    epsilonE * epsilonB * P_c2
     
 R68:
     P_u2 > P_p2
-    epsilon1 * epsilon3 * P_u2
+    epsilonE * epsilonB * P_u2
     
 R69:
     P_p2 > P_u2
-    epsilon2 * P_p2
+    epsilonU * P_p2
     
 R70:
     P_c3 > P_p3
-    epsilon1 * epsilon3 * P_c3
+    epsilonE * epsilonB * P_c3
     
 R71:
     P_u3 > P_p3
-    epsilon1 * epsilon3 * P_u3
+    epsilonE * epsilonB * P_u3
     
 R72:
     P_p3 > P_u3
-    epsilon2 * P_p3
+    epsilonU * P_p3
     
 R73:
     P_c4 > P_p4
-    epsilon1 * epsilon3 * P_c4
+    epsilonE * epsilonB * P_c4
     
 R74:
     P_u4 > P_p4
-    epsilon1 * epsilon3 * P_u4
+    epsilonE * epsilonB * P_u4
     
 R75:
     P_p4 > P_u4
-    epsilon2 * P_p4
+    epsilonU * P_p4
     
 R76:
     P_c5 > P_p5
-    epsilon1 * epsilon3 * P_c5
+    epsilonE * epsilonB * P_c5
     
 R77:
     P_u5 > P_p5
-    epsilon1 * epsilon3 * P_u5
+    epsilonE * epsilonB * P_u5
     
 R78:
     P_p5 > P_u5
-    epsilon2 * P_p5
+    epsilonU * P_p5
     
 R79:
     P_c6 > P_p6
-    epsilon1 * epsilon3 * P_c6
+    epsilonE * epsilonB * P_c6
     
 R80:
     P_u6 > P_p6
-    epsilon1 * epsilon3 * P_u6
+    epsilonE * epsilonB * P_u6
     
 R81:
     P_p6 > P_u6
-    epsilon2 * P_p6
+    epsilonU * P_p6
     
 ## Admission for uncolonized from protected
 
@@ -403,27 +403,27 @@ R87:
 
 R88:
 	P_p1 > P_c1 + Adm
-	theta * P_p1 * nu * (1-gamma4)
+	theta * P_p1 * nu * (1-deltaP)
 	
 R89:
 	P_p2 > P_c2 + Adm
-	theta * P_p2 * nu * (1-gamma4)
+	theta * P_p2 * nu * (1-deltaP)
 	
 R90:
 	P_p3 > P_c3 + Adm
-	theta * P_p3 * nu * (1-gamma4)
+	theta * P_p3 * nu * (1-deltaP)
 	
 R91:
 	P_p4 > P_c4 + Adm
-	theta * P_p4 * nu * (1-gamma4)
+	theta * P_p4 * nu * (1-deltaP)
 	
 R92:
 	P_p5 > P_c5 + Adm
-	theta * P_p5 * nu * (1-gamma4)
+	theta * P_p5 * nu * (1-deltaP)
 	
 R93:
 	P_p6 > P_c6 + Adm
-	theta * P_p6 * nu * (1-gamma4)
+	theta * P_p6 * nu * (1-deltaP)
 	
 ## Reactions involving infected individuals ##
 
@@ -431,204 +431,204 @@ R93:
 
 R94:
     P_c1 > P_i1 + Acquisition2
-    gamma1 * P_c1
+    deltaI * P_c1
 
 R95:
     P_c2 > P_i2 + Acquisition2
-    gamma1 * P_c2
+    deltaI * P_c2
 
 R96:
     P_c3 > P_i3 + Acquisition2
-    gamma1 * P_c3
+    deltaI * P_c3
 
 R97:
     P_c4 > P_i4 + Acquisition2
-    gamma1 * P_c4
+    deltaI * P_c4
 
 R98:
     P_c5 > P_i5 + Acquisition2
-    gamma1 * P_c5
+    deltaI * P_c5
 
 R99:
     P_c6 > P_i6 + Acquisition2
-    gamma1 * P_c6
+    deltaI * P_c6
 
 ## Rate infected die ##
 
 R100:
     P_i1 > P_u1 + Deaths
-    gamma2 * (1- nu)* P_i1
+    deltaD * (1- nu)* P_i1
     
 R101:
     P_i1 > P_c1 + Deaths
-    gamma2 * nu * P_i1
+    deltaD * nu * P_i1
     
 R102:
     P_i2 > P_u2 + Deaths
-    gamma2 * (1- nu)* P_i2
+    deltaD * (1- nu)* P_i2
 
 R103:
     P_i2 > P_c2 + Deaths
-    gamma2 * nu * P_i2
+    deltaD * nu * P_i2
 
 R104:
     P_i3 > P_u3 + Deaths
-    gamma2 * (1- nu)* P_i3
+    deltaD * (1- nu)* P_i3
 
 R105:
     P_i3 > P_c3 + Deaths
-    gamma2 * nu * P_i3
+    deltaD * nu * P_i3
 
 R106:
     P_i4 > P_u4 + Deaths
-    gamma2 * (1- nu)* P_i4
+    deltaD * (1- nu)* P_i4
 
 R107:
     P_i4 > P_c4 + Deaths
-    gamma2 * nu * P_i4
+    deltaD * nu * P_i4
 
 R108:
     P_i5 > P_u5 + Deaths
-    gamma2 * (1- nu)* P_i5
+    deltaD * (1- nu)* P_i5
 
 R109:
     P_i5 > P_c5 + Deaths
-    gamma2 * nu * P_i5
+    deltaD * nu * P_i5
 
 R110:
     P_i6 > P_u6 + Deaths
-    gamma2 * (1- nu)* P_i6
+    deltaD * (1- nu)* P_i6
 
 R111:
     P_i6 > P_c6 + Deaths
-    gamma2 * nu * P_i6
+    deltaD * nu * P_i6
     
 ## Cured from Infection
     
 R112:
     P_i1 > P_u1
-    gamma3 * P_i1
+    deltaC * P_i1
     
 R113:
     P_i2 > P_u2
-    gamma3 * P_i2
+    deltaC * P_i2
     
 R114:
     P_i3 > P_u3
-    gamma3 * P_i3
+    deltaC * P_i3
     
 R115:
     P_i4 > P_u4
-    gamma3 * P_i4
+    deltaC * P_i4
     
 R116:
     P_i5 > P_u5
-    gamma3 * P_i5
+    deltaC * P_i5
     
 R117:
     P_i6 > P_u6
-    gamma3 * P_i6
+    deltaC * P_i6
     
 # admission with infection
 R118:
 	P_u1 > P_i1 + Adm
-	theta * P_u1 * nu * gamma4
+	theta * P_u1 * nu * deltaP
     
 R119:
 	P_c1 > P_i1 +Adm + Dis
-	theta * P_c1 * nu * gamma4
+	theta * P_c1 * nu * deltaP
 	
 R120:
 	P_p1 > P_i1 + Adm
-	theta * P_p1 * nu * gamma4
+	theta * P_p1 * nu * deltaP
 	
 R121:
 	P_i1 > P_i1 + Adm + Dis
-	#gamma2 * P_i1 * nu * gamma4
+	#deltaD * P_i1 * nu * deltaP
 	0.0
 	
 R122:
 	P_u2 > P_i2 + Adm
-	theta * P_u2 * nu * gamma4
+	theta * P_u2 * nu * deltaP
     
 R123:
 	P_c2 > P_i2 + Adm + Dis
-	theta * P_c2 * nu * gamma4
+	theta * P_c2 * nu * deltaP
 	
 R124:
 	P_p2 > P_i2 + Adm
-	theta * P_p2 * nu * gamma4
+	theta * P_p2 * nu * deltaP
 	
 R125:
 	P_i2 > P_i2 + Adm + Dis
-	#gamma2 * P_i2 * nu * gamma4
+	#deltaD * P_i2 * nu * deltaP
 	0.0
 	
 R126:
 	P_u3 > P_i3 + Adm
-	theta * P_u3 * nu * gamma4
+	theta * P_u3 * nu * deltaP
     
 R127:
 	P_c3 > P_i3 + Adm + Dis
-	theta * P_c3 * nu * gamma4
+	theta * P_c3 * nu * deltaP
 	
 R128:
 	P_p3 > P_i3 + Adm
-	theta * P_p3 * nu * gamma4
+	theta * P_p3 * nu * deltaP
 	
 R129:
 	P_i3 > P_i3 + Adm + Dis
-	#gamma2 * P_i3 * nu * gamma4
+	#deltaD * P_i3 * nu * deltaP
    0.0
     
 R130:
 	P_u4 > P_i4 + Adm
-	theta * P_u4 * nu * gamma4
+	theta * P_u4 * nu * deltaP
     
 R131:
 	P_c4 > P_i4 + Adm + Dis
-	theta * P_c4 * nu * gamma4
+	theta * P_c4 * nu * deltaP
 	
 R132:
 	P_p4 > P_i4 + Adm
-	theta * P_p4 * nu * gamma4
+	theta * P_p4 * nu * deltaP
 	
 R133:
 	P_i4 > P_i4 + Adm + Dis
-	#gamma2 * P_i4 * nu * gamma4
+	#deltaD * P_i4 * nu * deltaP
     0.0
 R134:
 	P_u5 > P_i5 + Adm
-	theta * P_u5 * nu * gamma4
+	theta * P_u5 * nu * deltaP
     
 R135:
 	P_c5 > P_i5 + Adm + Dis
-	theta * P_c5 * nu * gamma4
+	theta * P_c5 * nu * deltaP
 	
 R136:
 	P_p5 > P_i5 + Adm
-	theta * P_p5 * nu * gamma4
+	theta * P_p5 * nu * deltaP
 	
 R137:
 	P_i5 > P_i5 + Adm + Dis
-	#gamma2 * P_i5 * nu * gamma4
+	#deltaD * P_i5 * nu * deltaP
 	0.0
 
 R138:
 	P_u6 > P_i6 + Adm
-	theta * P_u6 * nu * gamma4
+	theta * P_u6 * nu * deltaP
     
 R139:
 	P_c6 > P_i6 + Adm + Dis
-	theta * P_c6 * nu * gamma4
+	theta * P_c6 * nu * deltaP
 	
 R140:
 	P_p6 > P_i6 + Adm
-	theta * P_p6 * nu * gamma4
+	theta * P_p6 * nu * deltaP
 	
 R141:
 	P_i6 > P_i6 + Adm + Dis
-	#gamma2 * P_i6 * nu * gamma4
+	#deltaD * P_i6 * nu * deltaP
 	0.0
 
 
@@ -719,18 +719,18 @@ tau_N = 2.728 #3.30 nurse gown/glove changes per hour with 82.66% compliance
 tau_D = 0.744 #0.90 doctor gown/glove changes per hour with 82.66% compliance
 
 mu = 0.002083 # natural decolonization rate median 20 days per Star*ICU trial
-epsilon1 = 0.125  # effectiveness of chg
-epsilon2 = 1.0    # rate protected people are returned to uncolonized
-epsilon3 = 0.0    # rate people are bathed in chg
+epsilonE = 0.125  # effectiveness of chg
+epsilonU = 1.0    # rate protected people are returned to uncolonized
+epsilonB = 0.0    # rate people are bathed in chg
 
-#gamma1 = 0.000343  # rate colonized become infected
-gamma1 = 0.0
-#gamma2 = 0.000403    # rate infected die
-gamma2 = 0.0
-#gamma3 = 0.002976      # rate infected cured
-gamma3 = 0.0
-#gamma4 = 0.32      # % infected from colonized
-gamma4 = 0.0
+#deltaI = 0.000343  # rate colonized become infected
+deltaI = 0.0
+#deltaD = 0.000403    # rate infected die
+deltaD = 0.0
+#deltaC = 0.002976      # rate infected cured
+deltaC = 0.0
+#deltaP = 0.32      # % infected from colonized
+deltaP = 0.0
 
 
 
